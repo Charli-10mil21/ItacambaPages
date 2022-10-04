@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Planificacion</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+	<style>
+		.form{
+			border: 2px solid blue;
+
+			background-color: rgb(153, 217, 234);
+		}		
+
+
+	</style>
+</head>
+<body>
+	<header class="container-fluid">
+		<nav class=" navbar navbar-expand-md navbar-light bg-light border-3 border-bottom border-primary">
+  			<div class="container-fluid">
+    			<a class="navbar-brand" href="panelAdmin.html ">
+
+      				<img src="img/logo-itacamba.png" alt="" width="250" height="50">
+    			</a>
+    			
+    			<button type = "button" class = "navbar-toggler" data-bs-toggle="collapse" data-bs-target="#MenuNavegacion">
+    				<span class="navbar-toggler-icon"></span>
+    			</button>
+    			<div id="MenuNavegacion" class="collapse navbar-collapse">
+    				<ul class="navbar-nav ms-3">
+    					<li class="nav-item"><a class="nav-link" href="topografia.html">Topografia</a></li>
+    					<li class="nav-item"><a class="nav-link" href="#">Laboratorio</a></li>
+    					<li class="nav-item"><a class="nav-link" href="#">Explotacion</a></li>
+    					<li class="nav-item"><a class="nav-link" href="#">Perforacion</a></li>
+    					<li class="nav-item"><a class="nav-link" href="#">Blending</a></li>
+    					<li class="nav-item  ">
+    						<button class="btn btn-outline-danger  my-1" >
+									Cerrar Sesion
+							</button>
+    					</li>
+    					
+    				</ul>
+    				
+    			</div>
+  			</div>
+		</nav>
+	</header>
+	
+	<div class="container py-4">
+		<div class="row">
+			<h1>
+				Proyectos
+			</h1>
+			
+			<button class="btn btn-primary " type="submit">Nueva Planificacion</button>
+
+		</div>
+		<div class="row my-4">
+		  <form action=" {{route('home')}}">
+		    <div class="form-row">
+		      <div class="col-sm-4 my-1">
+		        <input type="text" class="form-control" name="busqueda" value="planificacion">
+		      </div>
+		      <div class="col auto my-1">
+		        <input type="submit" class="btn btn-primary" value="Buscar">
+		      </div>
+		    </div>
+		  </form>
+		</div>
+
+
+		<div class="row my-4">
+		  <table class="table">
+		    <thead>
+		      <tr>
+		        <th scope="col">#id</th>
+		        <th scope="col">Nº Proyecto</th>
+		        <th scope="col">Fecha Inicio</th>
+		        <th scope="col">Fecha fin</th>
+		        <th scope="col">Presupuesto</th>
+		        <th scope="col">Tipo de Produccion</th>
+		        <th scope="col">Avance</th>
+		        <th scope="col">Ver detalle</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr>
+		        <th scope="row">1</th>
+		        <td>12</td>
+		        <td>03/10/2022</td>
+		        <td>03/11/2022</td>
+		        <td>75000bs</td>
+		        <td>Piedra caliza</td>
+		        <td>15%</td>
+		         <td>
+		           <a href="{{ route('editar', $item)}}" class="btn btn-warning btn-sm"><img src="img/editar2.png" alt="" height="25px"></a>
+		         </td>
+		      </tr>
+		    </tbody>
+		  </table>
+		</div>
+
+
+		<div class="row fila row-cols-1 justify-content-between">
+			<div class="iconos col col-xs-12 col-sm-12 col-md-6 col-lg-2 user">
+				<a href="topografia.html" class="nav-link">
+					<div class="text-center">
+						<img src="img/topografia.png" alt="" height="70px">
+					</div>
+					<div class="text-center">
+						<button class="btn btn-outline-success  my-3" >
+									Topografia
+						</button>
+					</div>
+				</a>
+			</div>
+			<div class="iconos col col-sm-12 col-md-6 col-lg-2 vol">
+				<a href="volquetas.html" class="nav-link">
+					<div class="text-center">
+						<img src="img/explotacion.png" alt="" height="70px">
+					</div>
+					<div class="text-center">
+						<button class="btn btn-outline-warning  my-3" >
+									Explotaciones
+						</button>
+					</div>
+				</a>
+			</div>
+			<div class="iconos col col-sm-12 col-md-6 col-lg-2 maqui">
+				<a href="maquinaria.html" class="nav-link">
+					<div class="text-center">
+						<img src="img/Perforacion.png" alt="" height="70px">
+					</div>
+					<div class="text-center">
+						<button class="btn btn-outline-secondary  my-3" >
+									Perforacion y Muestreo
+						</button>
+					</div>
+				</a>
+			</div>
+			<div class="iconos col col-sm-12 col-md-6 col-lg-2 job">
+				<a href="login.html" class="nav-link">
+					<div class="text-center">
+						<img src="img/laboratorio.png" alt="" height="70px">
+					</div>
+					<div class="text-center">
+						<button class="btn btn-outline-info  my-3" >
+									Laboratorio
+						</button>
+					</div>
+				</a>
+			</div>
+			<div class="iconos col col-sm-12 col-md-6 col-lg-2 job">
+				<a href="login.html" class="nav-link">
+					<div class="text-center">
+						<img src="img/informe.png" alt="" height="70px">
+					</div>
+					<div class="text-center">
+						<button class="btn btn-outline-primary  my-3" >
+									Blending
+						</button>
+					</div>
+				</a>
+			</div>
+		</div>
+	
+	</div>
+
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
